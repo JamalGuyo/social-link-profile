@@ -52,7 +52,7 @@ a {
 }
 
 .flow>*+* {
-  margin-top: var(--flow-space, 1rem) !important;
+  margin-top: var(--custom-space, --flow-space) !important;
 }
 
 .bg-dark {
@@ -123,4 +123,13 @@ h1 {
   border-radius: var(--radius);
   padding: .5rem;
   font-weight: var(--fw-700);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
