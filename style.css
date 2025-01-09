@@ -1,3 +1,20 @@
+:root {
+  --flow-space: 1rem;
+  --radius: .5rem;
+
+  --clr-green: hsl(75, 94%, 57%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grey-700: hsl(0, 0%, 20%);
+  --clr-grey-800: hsl(0, 0%, 12%);
+  --clr-grey-900: hsl(0, 0%, 8%);
+
+  --ff-inter: "Inter", serif;
+  --fs-100: 0.875rem;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
 /*RESET*/
 *,
 *::before,
@@ -10,10 +27,6 @@ h1,
 p,
 figure {
   margin: 0
-}
-
-p {
-  max-width: 50ch;
 }
 
 ul[class],
@@ -30,29 +43,14 @@ img {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   color: inherit
 }
 
 
 /*UTILITIES*/
-:root {
-  --flow-space: 1rem;
-  --radius: .5rem;
-
-  --clr-green: hsl(75, 94%, 57%);
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-grey-700: hsl(0, 0%, 20%);
-  --clr-grey-800: hsl(0, 0%, 12%);
-  --clr-grey-900: hsl(0, 0%, 8%);
-
-  --ff-inter: "Inter", serif;
-  --fw-400: 400;
-  --fw-600: 600;
-  --fw-700: 700;
-}
-
 .flow>*+* {
-  margin-top: var(--custom-space, --flow-space) !important;
+  margin-top: var(--custom-space, var(--flow-space)) !important;
 }
 
 .bg-dark {
@@ -84,26 +82,33 @@ a {
 
 /*GENERAL*/
 body {
-  margin: var(--flow-space);
+  margin: .75rem;
   min-height: 100vh;
 
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--clr-grey-900);
+  font-size: var(--fs-100);
   font-family: var(--ff-inter);
+  font-weight: var(--fw-700);
 }
 
 h1 {
   font-weight: var(--fw-700);
+  line-height: 1;
+
 }
 
 /*COMPONENTS*/
 .card {
-  max-width: 20rem;
+  max-width: 25rem;
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: var(--flow-space);
 
   text-align: center;
+}
+
+.card .address {
+  --custom-space: .65rem;
 }
 
 .card img {
@@ -114,15 +119,21 @@ h1 {
 }
 
 .card .role {
+  font-weight: var(--fw-400);
   opacity: .6;
 }
 
-.card ul li a {
+.card .link {
   display: block;
-  background-color: var(--clr-grey-700);
   border-radius: var(--radius);
   padding: .5rem;
+  background-color: var(--clr-grey-700);
   font-weight: var(--fw-700);
+
+  &:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-grey-900);
+  }
 }
 
 .attribution {
